@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Mozhgan_Lab4</title>
+    <meta charset="utf-8" />
+	<style type="text/css">
+	body {
+		background-color:#ffccff;
+
+		}
+	</style>
+    <script>
+	var text="The nefarious thing about performance bugs is that the user may never know they are there - the program appears to work correctly, carrying out the correct operations, showing the right thing on the screen or printing the right text. It just does it a bit more slowly than it should have. It takes an experienced programmer, with a reasonably accurate mental model of the problem and the correct solution, to know how fast the operation should have been performed, and hence if the program is running slower than it should be ";
+    var x=0;
+	 var count=x;
+	 function printString(){
+	  
+	  if(x < 100){
+	  var myNextChar = text.charAt(count);
+	  document.getElementById("outDiv").innerHTML += myNextChar;
+	  x++;
+	  count++;
+	  
+	    }
+	  else{
+	  document.getElementById("outDiv").innerHTML += "<br>";
+	  x=0;
+	  
+	    }
+	   
+	  if(count<text.length){
+	  setTimeout(printString,10);
+	
+	
+	  }
+	 }
+	 
+	  printString();
+	    </script>
+</head>
+<body>
+   
+	<input type="button" id="btnNext" class="BtnButton"  onclick="printString();" value="Print"/>
+	<div id="outDiv" ></div>
+	
+	
+</body>
+</html>
